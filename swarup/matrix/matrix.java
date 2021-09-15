@@ -6,6 +6,7 @@ public class matrix {
     public float mat[][];
     public float temp[][];
     public int m, n;
+    public float D;
     cursor cu = new cursor();
     Scanner sc = new Scanner(System.in);
 
@@ -225,7 +226,7 @@ public class matrix {
     public float[][] invMat(){
         float[][] invMat = new float[n][n];
         if(m==n){
-            float D = det();
+            this.D = det();
             if(D==0) System.out.println("The Determinant is "+D+"\nTherefore, the inverse of matrix A does not exists.");
             else System.out.println("The Determinant is "+D+", which is not equal to 0.\nTherefore, the inverse of matrix A exists.");
             float[][] trnMat = trn(cofactors());
